@@ -1,0 +1,173 @@
+body {
+  text-align: center;
+}
+
+/*----------------------------------------------- Animations -------------------------------------------------- */
+
+@keyframes App-logo-spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+
+@keyframes App-logo-zoom {
+	0% {
+	  	transform: scale(0.5);
+	}
+	50%{
+	  	transform: scale(1.5);
+	}
+	100%{
+	  	transform: scale(0.5);
+	}
+  
+}
+
+
+@keyframes fadeIn {
+	0% {opacity: 0;}
+	100% {opacity: 1;}
+}
+
+
+@keyframes fadeOut{
+	100% {opacity: 1;}
+	0% {opacity: 0;}
+}
+
+
+
+/* ------------------------------------------- Home Screen --------------------------------------------------------------------------- */
+
+
+.homescreen-bg{
+  position: fixed;
+  background-image: url("./Images/homescreen-bg1");
+  height: 100%; 
+  width: 100%;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
+}
+
+
+/* ------------------------------------------- Home Screen Cards--------------------------------------------------------------------------- */
+
+
+
+.cards-box {
+	background-color: #2A265F;
+	border-radius: 10px;
+	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+	display: inline-table;
+	/* min-width: 400px; */
+	max-width: 300px;
+	margin: 20px;
+	min-height: 570px;
+	cursor: pointer;
+	border: 10px solid #2A265F;
+	animation: fadeIn 1s 1;
+}
+
+@media only screen and (max-width: 620px){
+	.cards-box{
+		min-height: auto;
+	}
+}
+
+.cards-info {
+  padding: 3px 5px 10px 5px;
+  width: 100%;
+}
+
+.cards-title {
+	font-size: 28px;
+	font-weight: bold;
+	color: rgba(255, 84, 17, 1);
+	letter-spacing: 1px;
+	padding: 10px 5px;
+}
+
+
+.cards-description {
+	font-size: 18px;
+	font-family: 'Muli', sans-serif;
+	/* text-align: left; */
+	color: #ffffff;
+	opacity: 0.8;
+	padding: 4px 10px;
+	letter-spacing: 2px;
+}
+
+
+.cards-box:hover{
+	/* background-color: black; */
+	border-radius: 10px;
+	transition: transform .5s;
+	transform: scale(1.05);
+}
+
+.card-image{
+	max-width: 256px;
+	height: 200px;
+	border-radius: 10px;
+}
+
+
+/* ------------------------------------------- Course Selection Page --------------------------------------------------------------------------- */
+
+
+.course-content-div{
+	align-self: center;
+}
+
+
+.course-content-inner-div{
+	padding-top: 60px;
+	margin: auto;
+	min-width: 350px;
+	width: 65%;
+	animation: fadeIn 1s 1;
+}
+
+
+/* ------------------------------------------- Loading Division --------------------------------------------------------------------------- */
+
+.loading-div{
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	text-align: center;
+	/* vertical-align: middle; */
+	/* z-index; */
+}
+
+.logo-container{
+	top: 20%;
+	position: relative;
+	animation: App-logo-zoom infinite 6s linear;
+}
+
+.app-logo{
+	height: 40vmin;
+  	pointer-events: none;
+}
+
+
+/* ------------------------------------------- Navbar --------------------------------------------------------------------------- */
+
+
+.navbar-color{
+	background-color: #2A265F;
+	color: pink;
+  }
+  
+  .react-icon{
+	  font-size: 24px;
+  }
