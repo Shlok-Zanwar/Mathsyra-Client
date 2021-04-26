@@ -9,7 +9,6 @@ import { MdExpandMore } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 
 function Course() {
-    var backend = "http://localhost:8000";
     const [courses, setCourses] = useState([]);
     const [quizes, setQuizes] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -17,20 +16,22 @@ function Course() {
     const [sendRequest, setSendRequest] = useState(1);
 
     useEffect(() => {
-        axios.get(backend + window.location.pathname)
+        console.log(window.location.pathname);
+        axios.get((window.location.pathname).toLowerCase())
             .then(response =>{
+                console.log(response.data);
                 setCourses(response.data.courses);
                 setQuizes(response.data.quizes);
                 setLoading(false);
             })
             .catch(error => {
-                // console.log(error);
+                console.log(error);
                 // console.log(window.location.pathname);
-                setSendRequest(sendRequest+1);
-                if(sendRequest >= 5){
-                    alert("Couldnt get details\nRefresh page ?")
-                    window.location.reload();
-                }
+                // setSendRequest(sendRequest+1);
+                // if(sendRequest >= 5){
+                //     alert("Couldnt get details\nRefresh page ?")
+                //     window.location.reload();
+                // }
           })
       }, [sendRequest])
 
