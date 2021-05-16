@@ -12,6 +12,8 @@ import Container from '@material-ui/core/Container';
 import VisibilityIcon from '@material-ui/icons/Visibility';
 import VisibilityOffIcon from '@material-ui/icons/VisibilityOff';
 import { InputAdornment } from '@material-ui/core';
+import axios from 'axios';
+import { useSnackbar } from 'notistack';
 
 
 export default function SignUp() {
@@ -25,19 +27,36 @@ export default function SignUp() {
   const [password, setPassword ] = useState("");
   const [confirmPass, setConfirmPass] = useState("");
 
+  const { enqueueSnackbar } = useSnackbar();
+
 
   const handleSubmit = e => {
     e.preventDefault();
     const signUpDetails = {
       name: firstName + " " + lastName,
       email: email,
-      userName: userName,
+      username: userName,
       password: password,
     }
-    console.log(signUpDetails)
-    if(signUpDetails.password === signUpDetails.passwordConfrim){
+    console.log(signUpDetails);
+    if(signUpDetails.password === confirmPass){
       console.log("Confirmed")
     }
+
+    axios.post("/sign-up", signUpDetails)
+      .then(res => {
+        console.log(res);
+        enqueueSnackbar("Sign-up successfull, please verify your account", {
+          variant: 'success'
+        })
+      })
+      .catch(err => {
+        console.log(err.response.data.detail);
+        enqueueSnackbar(err.response.data.detail, {
+          variant: 'error'
+        })
+      })
+
   }
 
 
@@ -70,7 +89,7 @@ export default function SignUp() {
             <Grid item xs={12} sm={6}>
               <TextField
                 variant="outlined"
-                required
+                // required
                 fullWidth
                 id="lastName"
                 label="Last Name"
@@ -84,10 +103,10 @@ export default function SignUp() {
                 variant="outlined"
                 required
                 fullWidth
-                id="phone"
-                label="Phone"
-                name="phone"
-                autoComplete="phone"
+                id="email"
+                label="Email"
+                name="email"
+                autoComplete="email"
                 onChange={(e) => {setEmail(e.target.value)}}
               />
             </Grid>

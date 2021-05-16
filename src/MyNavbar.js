@@ -32,7 +32,7 @@ function MyNavbar() {
                                 className="react-icon"
                             />
                     </Nav.Link>
-                    <Nav.Link as={Link} to="/login" onClick={localStorage.removeItem("JWTtoken")}>
+                    <Nav.Link as={Link} to="/login" onClick={() => {localStorage.removeItem("JWTtoken")}}>
                         <BiLogOut 
                             className="react-icon"
                         />
