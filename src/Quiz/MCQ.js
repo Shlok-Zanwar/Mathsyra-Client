@@ -14,18 +14,28 @@ function MCQ({questions, setQuestions, index}) {
 
     const renderOptions = questions[index].options.map(option => {
         if(option === questions[index].answered){
-            return <h5 key={option}>{option}</h5>
+            return (
+                <div key={option} className="quiz-option selected">
+                    {option}
+                </div>
+            )
         }
         else{
-            return <div value={option} onClick={(e) => {setAnswer(option)}} key={option} >{option}</div>
+            return (
+                <div value={option} onClick={(e) => {setAnswer(option)}} key={option} className="quiz-option" >
+                    {option}
+                </div>
+            )
         }
     })
 
 
     return (
-        <div>
-            <div>{questions[index].question}</div>
-            <div>
+        <div className="quiz-question">
+            <div className="quiz-mcq-question">
+                {questions[index].question}
+            </div>
+            <div className="quiz-mcq-options">
                 {renderOptions}
             </div>
         </div>
