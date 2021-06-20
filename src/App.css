@@ -47,7 +47,7 @@ body {
 
 .homescreen-bg{
   position: absolute;
-  background-image: url("./Images/homescreen-bg1");
+  background-image: url("./Images/img.webp");
   height: 100%; 
   width: 100%;
   top: 0%;
@@ -131,10 +131,13 @@ body {
 
 
 /* ------------------------------------------- Course Selection Page --------------------------------------------------------------------------- */
-
+.courses-container{
+	padding-top: 400px;
+}
 
 .course-content-div{
 	align-self: center;
+	
 }
 
 
@@ -142,6 +145,7 @@ body {
 	padding-top: 60px;
 	margin: auto;
 	min-width: 350px;
+ 
 	width: 65%;
 	animation: fadeIn 1s 1;
 }
@@ -195,7 +199,6 @@ body {
 	padding: 20px;
 	font-size: 20px;
 	border-radius: 10px;
-
 }
 
 .correct{
@@ -210,11 +213,14 @@ body {
 
 
 .blog-outer-div{
-	border: 2px solid red;
+	border: 1px solid rgb(0, 0, 0);
+	background-color: rgba(255, 255, 255, 0.151);
+	backdrop-filter: blur(15px);
 	display: inline-table;
 	flex-direction: column;
 	justify-content: center;
 	opacity: 1;
+	font-weight: bold;
 	/* min-width: 400px; */
 	width: 92%;
 	max-width: 750px;
@@ -232,7 +238,7 @@ body {
 .blog-title {
 	font-size: 45px;
 	font-weight: bold;
-	color: rgba(255, 84, 17, 1);
+	color: rgb(84, 67, 180);
 	  letter-spacing: 1px;
 	  padding: 10px 15px;
   }
@@ -240,7 +246,7 @@ body {
   .blog-subheading{
 	font-size: 30px;
 	font-weight: bold;
-	color: rgba(17, 122, 255, 1);
+	color: rgb(84, 67, 180);
 	  letter-spacing: 1px;
 	  padding: 10px 15px;
   }
@@ -249,7 +255,7 @@ body {
 	font-family: 'Muli', sans-serif;
 	text-align: left;
 	font-size: 20px;
-	color: #ffffff;
+	color: #121213;
 	opacity: 0.9;
 	padding: 6px 30px;
 	  letter-spacing: 2px;
@@ -267,7 +273,7 @@ body {
 	font-size: 20px;
 	opacity: 0.9;
 	padding: 10px 30px 10px 35px;
-	color: #ffffff;
+	color: #210a4e;
   }
   
   .redirect-button{
@@ -299,7 +305,7 @@ body {
   }
   
   .blog-image{
-	border: 2px solid rgba(255, 118, 20, 1);
+	border: 2px solid rgb(0, 0, 0);
 	border-radius: 10px;
 	margin: 10px 10px 15px 10px;
 	max-height: 350px;
@@ -307,22 +313,57 @@ body {
 	max-width: 90%;
 	height: auto;
   }
-  
-
-  .mcq-options-div{
-	  text-align: left;
+  .question-div{
+	margin: 10px;
+	padding: 15px;
+	
+	/* border: black 1px solid; */
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	border-radius: 10px;
+	background-color: rgba(143, 78, 41, 0.2);
   }
-
-
+  .mcq-question{
+	  text-align: left;
+	  
+	  cursor:pointer;
+	  font-size: 20px;
+  }
+  .mcq-options-div{
+	text-align: left;
+  }
+ .quiz-mcq-question{
+	 font-size:x-large;
+	 padding-left: 20px;
+ }
+  .quiz-question{
+	margin: 30px;
+	padding: 15px;
+	text-align: left;
+	/* font-size: larger; */
+	/* border: black 1px solid; */
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	border-radius: 10px;
+	background-color: rgba(156, 72, 23, 0.2);
+  }
   .quiz-option{
 	  /* width: max-content; */
+	font-size:small;
 	cursor: pointer;
 	padding: 20px;
 	font-size: 20px;
 	border-radius: 10px;
+	width: fit-content;
+	height: fit-content;
   }
-
+ .submit-quiz-btn{
+	 background-color: rgb(76, 20, 165);
+	 padding: 10px 30px;
+	 border-radius: 10px;
+	 font-size: 25px;
+	 border: none;
+ }
   .selected{
-	  border: 2px solid red;
+	  border: 2px solid rgb(77, 90, 211);
+	  background-color:cornflowerblue;
 	/* box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.3); */
   }

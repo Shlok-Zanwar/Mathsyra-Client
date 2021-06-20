@@ -78,7 +78,7 @@ function QuizTemplate() {
 
     return questions.length === 0 ? <Loading /> : (
         
-        <div className="quiz-div">
+        <div className="blog-outer-div">
             <div style={{textAlign: 'center'}}>
                 <h1>react-timer-hook</h1>
                 <p>Stopwatch Demo</p>
@@ -94,7 +94,7 @@ function QuizTemplate() {
             <h1>{quizDetials.name}</h1>
             {renderQuestions}
             {/* <MCQ question={question} /> */}
-            <button onClick={() => {changeAnswer()}}> HIiii</button>
+            <button className="submit-quiz-btn" onClick={() => {changeAnswer()}}> HIiii</button>
         </div>
     )
 }

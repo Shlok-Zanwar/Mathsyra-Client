@@ -39,7 +39,7 @@ function Course() {
         return(
             <Link to={course.link}>
                 <AccordionDetails >
-                    <Typography>
+                    <Typography style={{color:"#FFFFFF"}}>
                         {course.name}
                     </Typography>
                 </AccordionDetails>
@@ -52,7 +52,7 @@ function Course() {
         return(
             <Link to={quiz.link}>
                 <AccordionDetails >
-                    <Typography>
+                    <Typography style={{color:"#FFFFFF"}}>
                         {quiz.name}
                     </Typography>
                 </AccordionDetails>
@@ -64,26 +64,26 @@ function Course() {
     return loading ? <Loading /> : 
         <div className="course-content-div">
             <div className="course-content-inner-div">
-                <Accordion defaultExpanded={true} style={{backgroundColor:"#2A265F", color:"white", borderTopLeftRadius:"20px", borderTopRightRadius:"20px"}}>
+                <Accordion defaultExpanded={true} style={{backgroundColor:"#2A265F70", color:"white", borderTopLeftRadius:"20px", borderTopRightRadius:"20px"}}>
                     <AccordionSummary
                         expandIcon={<MdExpandMore />}
                         aria-controls="panel1a-content"
                         id="panel1a-header"
                     >
-                    <Typography >
+                    <Typography style={{fontSize:"25px"}}>
                         Courses
                     </Typography>
                     </AccordionSummary>
                     {makeCourseList}
                 </Accordion>
 
-                <Accordion style={{backgroundColor:"#2A265F", color:"white", borderBottomLeftRadius:"20px", borderBottomRightRadius:"20px"}}>
+                <Accordion style={{backgroundColor:"#2A265F70", color:"white", borderBottomLeftRadius:"20px", borderBottomRightRadius:"20px"}}>
                     <AccordionSummary
                         expandIcon={<MdExpandMore />}
                         aria-controls="panel2a-content"
                         id="panel2a-header"
                     >
-                    <Typography >
+                    <Typography style={{fontSize:"25px"}}>
                         Quizes
                     </Typography>
                     </AccordionSummary>
