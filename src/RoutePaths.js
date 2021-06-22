@@ -3,6 +3,7 @@ import {BrowserRouter as Router, Switch, Route, Redirect } from "react-router-do
 import Login from "./Authentication/Login";
 import SignUp from "./Authentication/SignUp";
 import BlogTemplate from "./BlogTemplates/BlogTemplate";
+import TestingBlog from "./BlogTemplates/TestingBlog";
 import Course from "./CourseComponents/Course";
 import Home from "./HomeComponents/Home";
 import MyNavbar from './MyNavbar';
@@ -51,6 +52,10 @@ function RoutePaths({userDetails}) {
                                     {/* <MyNavbar /> */}
                                     <QuizTemplate />
                                     {/* <BlogTemplate /> */}
+                                </Route>
+
+                                <Route path="/testing">
+                                    <TestingBlog />
                                 </Route>
 
                                 <Route path="/">
